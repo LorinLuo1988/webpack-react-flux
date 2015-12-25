@@ -1,0 +1,35 @@
+{
+  "name": "webpack-react",
+  "version": "1.0.0",
+  "description": "webpack and react learn",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "clean-webpack-plugin": "^0.1.5",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "html-webpack-plugin": "^1.7.0",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "node-jsx": "^0.13.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "scripts": {
+    "test": "webpack -p",
+    "clean": "webpack --config webpack.clean.js",
+    "dev": "webpack --color --progress",
+    "server": "webpack-dev-server --content-base ../dist/ --port 3000 --inline --hot"
+  },
+  "author": "lorin",
+  "license": "ISC"
+}

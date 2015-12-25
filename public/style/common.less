@@ -1,0 +1,21 @@
+
+@margin-reset: 0px;
+@padding-reset: 0px;
+* {
+	margin: @margin-reset;
+	padding: @padding-reset;
+}
+body {
+  font: 16px/1.2 "微软雅黑";
+}
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.border(@width: 5px, @style: solid, @color: green) {
+  border: @arguments;
+}
+ul {
+  list-style-type: none;
+}

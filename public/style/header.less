@@ -1,0 +1,25 @@
+ul {
+  &:after {
+	content: "";
+	display: block;
+	clear: both;
+  }
+  li {
+	float: left;
+	padding: 5px 10px;
+	height: 25px;
+	line-height: 25px;
+	cursor: pointer;
+	&:hover {
+	  background-color: rgba(0, 128, 0, 0.43);
+	  border-radius: 5px;
+	  a {
+		color: #ffffff;
+	  }
+	}
+	a {
+	  color: #000000;
+	  text-decoration: none;
+	}
+  }
+}
