@@ -27,8 +27,9 @@
   "scripts": {
     "test": "webpack -p",
     "clean": "webpack --config webpack.clean.js",
-    "dev": "webpack --color --progress",
-    "server": "webpack-dev-server --content-base ../dist/ --port 3000 --inline --hot"
+	"build": "webpack --color --progress",
+	"dist": "webpack --config webpack.production.config.js --color --progress",
+    "server": "webpack-dev-server --content-base ./build/ --port 3000 --inline --hot"
   },
   "author": "lorin",
   "license": "ISC"

@@ -1,0 +1,2 @@
+ul:after{content:"";display:block;clear:both}ul li{float:left;padding:5px 10px;height:25px;line-height:25px;cursor:pointer}ul li:hover{background-color:rgba(0,128,0,.43);border-radius:5px}ul li:hover a{color:#fff}ul li a{color:#000;text-decoration:none}body{background-color:#d3d3d3}#header{background-color:gray;padding:0 10px}
+/*# sourceMappingURL=home.css.map*/

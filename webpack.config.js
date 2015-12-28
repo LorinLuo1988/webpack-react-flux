@@ -32,16 +32,16 @@ var config = {
 		home: [
 			'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
 			'webpack/hot/only-dev-server',
-			path.resolve(__dirname, "app/home.jsx")
+			path.resolve(__dirname, "src", "app/home.jsx")
 		],
 		introduce: [
 			'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
 			'webpack/hot/only-dev-server',
-			path.resolve(__dirname, "app/introduce.jsx")
+			path.resolve(__dirname, "src", "app/introduce.jsx")
 		]
 	},
 	output: {
-		path: path.resolve("../", "dist"), //打包输出的路径
+		path: path.resolve(__dirname, "build"), //打包输出的路径
 		publicPath: "http://localhost:3000/",  //加载静态资源的路径
 		filename: "[name].bundle.js"
 	},
@@ -54,7 +54,7 @@ var config = {
 		new ExtractTextPlugin("[name].css", {allChunks: true}),
 		new HtmlWebpackPlugin({
 			filename: "home.html", //输出html
-			template: path.resolve(__dirname, "home.html"),  //模板html
+			template: path.resolve(__dirname, "src", "home.html"),  //模板html
 			inject: "body", //将js文件插入该元素,
 			//templateContent: '<!DOCTYPE html><html><head lang="en"><meta charset="UTF-8"><title></title> </head> <body> <div id="index"></div> </body> </html>',
 			/*---templateContent: 自己定义的html字符串，不能发和template同时存在---*/
@@ -63,13 +63,10 @@ var config = {
 		}),
 		new HtmlWebpackPlugin({
 			filename: "introduce.html",
-			template: path.resolve(__dirname, "introduce.html"),
+			template: path.resolve(__dirname, "src", "introduce.html"),
 			inject: "body",
 			title: "introduce",
 			chunks: ["common", "introduce"]
-		}),
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': '"development"'
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		uglifyPlugin
@@ -101,7 +98,7 @@ var config = {
 		root: path.resolve(__dirname, "app"),
 		extensions: ["", ".js", ".jsx", ".css", ".less"],
 		alias: {
-			homeCss: path.resolve(__dirname, "style/home.less")
+			homeCss: path.resolve(__dirname, "src", "style/home.less")
 		}
 	},
 	devtool: 'source-map'
