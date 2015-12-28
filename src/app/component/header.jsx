@@ -2,6 +2,7 @@
  * Created by doyen on 2015/12/24.
  */
 import React from "react";
+import ReactDOM from "react-dom";
 import "../../style/header.less"
 
 var Header = React.createClass({
@@ -16,4 +17,11 @@ var Header = React.createClass({
 	}
 });
 
-export default Header;
+function createNav (list) {
+	ReactDOM.render(
+		<Header nav={list}/>,
+		document.getElementById("header")
+	);
+}
+
+export var createNav =  createNav;
