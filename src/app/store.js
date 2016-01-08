@@ -37,15 +37,14 @@ TodosStore.prototype.addItem = function (item) {
 }
 
 TodosStore.prototype.removeItem = function (item) {
-	var id = null;
-
-	this.items.map(function (value, index) {
-		if (value.id == item) {
-			id = index
+	this.items = this.items.filter(function (value) {
+		if (value.id != item) {
+			return true;
+		} else {
+			return false;
 		}
 	})
 
-	this.items.splice(id, 1);
 	return this;
 }
 
