@@ -24,7 +24,7 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /*---ordinal variable---*/
-var babelQuery = {presets: ["es2015", "react"]};
+var babelQuery = {presets: ["es2015", "react"], plugins: ["transform-object-rest-spread"]};
 
 /*---------------config--------------*/
 var config = {
@@ -38,6 +38,11 @@ var config = {
 			'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
 			'webpack/hot/only-dev-server',
 			path.resolve(__dirname, "src", "app/introduce.jsx")
+		],
+		todos: [
+			'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+			'webpack/hot/only-dev-server',
+			path.resolve(__dirname, "src", "app/todos.jsx")
 		]
 	},
 	output: {
@@ -49,7 +54,7 @@ var config = {
 		new CommonsChunkPlugin({
 			name: "common",
 			filename: "common.js",
-			chunks: ["home", "introduce"]
+			chunks: ["home", "introduce", "todos"]
 		}),
 		new ExtractTextPlugin("[name].css", {allChunks: true}),
 		new HtmlWebpackPlugin({
@@ -68,8 +73,15 @@ var config = {
 			title: "introduce",
 			chunks: ["common", "introduce"]
 		}),
-		new webpack.HotModuleReplacementPlugin(),
-		uglifyPlugin
+		new HtmlWebpackPlugin({
+			filename: "todos.html",
+			template: path.resolve(__dirname, "src", "todos.html"),
+			inject: "body",
+			title: "introduce",
+			chunks: ["common", "todos"]
+		}),
+		new webpack.HotModuleReplacementPlugin()
+		//uglifyPlugin
 	],
 	module: {
 		loaders: [
@@ -77,9 +89,10 @@ var config = {
 				test: /\.jsx?$/,
 				loader: "react-hot!babel-loader?" + JSON.stringify(babelQuery),
 				exclude: path.resolve(__dirname, "node_modules") //这些文件不会被loader起作用(一般是第三方插件)
-				//query: {
-				//	presets: ["es2015", "react"]
-				//}
+			},
+			{
+				test: reactDir,
+				loader: "expose?React"
 			},
 			{
 				test: /\.css$/,
@@ -90,6 +103,13 @@ var config = {
 				test: /\.less$/,
 				loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize?sourceMap!less-loader")
 				//loaders: ["style-loader", "css-loader"]
+			},
+			{
+				test: /\.(png|jpg)$/,
+				loader: "url-loader",
+				query: {
+					limit: 2500000
+				}
 			}
 		],
 		noParse: [reactDomDir] //不会去检查这些文件里面是否有依赖(一般是第三方插件)
@@ -98,7 +118,7 @@ var config = {
 		root: path.resolve(__dirname, "app"),
 		extensions: ["", ".js", ".jsx", ".css", ".less"],
 		alias: {
-			homeCss: path.resolve(__dirname, "src", "style/home.less")
+			homeLess: path.resolve(__dirname, "src", "style/home.less")
 		}
 	},
 	devtool: 'source-map'

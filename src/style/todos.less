@@ -1,0 +1,133 @@
+.border (@width: 1px, @style: solid, @color: gray) {
+  border: @arguments;
+}
+
+.borderRadius (@radius: 5px) {
+  border-radius: @radius;
+}
+
+.boxShadow (outset, @h-shadow: 1px, @v-shadow: 1px, @blur: 1px, @spread: 1px, @color: gray) {
+  -webkit-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+  -moz-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+  -ms-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+  -o-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+  box-shadow: @h-shadow @v-shadow @blur @spread @color;
+}
+
+.boxShadow (inset, @h-shadow: 1px, @v-shadow: 1px, @blur: 1px, @spread: 1px, @color: gray) {
+  -webkit-box-shadow: @h-shadow @v-shadow @blur @spread @color inset;
+  -moz-box-shadow: @h-shadow @v-shadow @blur @spread @color inset;
+  -ms-box-shadow: @h-shadow @v-shadow @blur @spread @color inset;
+  -o-box-shadow: @h-shadow @v-shadow @blur @spread @color inset;
+  box-shadow: @h-shadow @v-shadow @blur @spread @color inset;
+}
+
+.boxShadow (both, @h-shadow: 1px, @v-shadow: 1px, @blur: 1px, @spread: 1px, @color: gray) {
+  -webkit-box-shadow: @h-shadow @v-shadow @blur @spread @color,
+  @h-shadow @v-shadow @blur @spread @color inset;
+  -moz-box-shadow: @h-shadow @v-shadow @blur @spread @color,
+  @h-shadow @v-shadow @blur @spread @color inset;
+  -ms-box-shadow: @h-shadow @v-shadow @blur @spread @color,
+  @h-shadow @v-shadow @blur @spread @color inset;
+  -o-box-shadow: @h-shadow @v-shadow @blur @spread @color,
+  @h-shadow @v-shadow @blur @spread @color inset;
+  box-shadow: @h-shadow @v-shadow @blur @spread @color,
+  @h-shadow @v-shadow @blur @spread @color inset;
+}
+
+.transition (@property, @time, @type, @delay) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+#button (@padding: 0px 10px, @bg: gray, @color: white, @height: 25px) {
+  outline: none;
+  border: none;
+  padding: @padding;
+  background-color: @bg;
+  color: @color;
+  height: @height;
+  line-height: @height;
+  &:hover {
+	cursor: pointer;
+  }
+}
+
+@todos-width: 500px;
+
+.todos {
+  width: @todos-width;
+  height: auto;
+  margin: 50px auto;
+  .header {
+	h4 {
+	  text-align: center;
+	  font-size: 25px;
+	}
+  }
+  .panel {
+	background-color: #ffffff;
+	.borderRadius();
+	.border();
+	.boxShadow(both,1px,1px,3px,1px, #cfcfcf);
+	.footer {
+	  padding: 8px;
+	  button {
+		#button(0px 10px, red, white);
+		.borderRadius();
+	  }
+	}
+	.input-control {
+	  height: 35px;
+	  border-bottom: 1px solid gray;
+	  padding: 8px;
+	  font-size: 25px;
+	  .toggle-all {
+		display: inline-block;
+		margin: 0px 20px 0px 10px;
+		-webkit-transform: rotate(90deg);
+		.transition(all, 1s, ease, 0s);
+		&:hover {
+		  transform: rotate(90deg);
+		  cursor: pointer;
+		}
+	  }
+	  .new-todo {
+		height: 100%;
+		font-size: 25px;
+		width: calc(~"100% - 100px");
+		border: none;
+		outline: none;
+		margin-top: -2px;
+	  }
+	  .add {
+		#button(0px 10px, #00b100, white);
+		.borderRadius();
+		margin-top: 5px;
+	  }
+	}
+	.todo-list {
+	  .todo-item {
+		border-bottom: 1px solid gray;
+		padding: 0px 8px 0px 10px;
+		height: 35px;
+		line-height: 35px;
+		color: gray;
+		&:hover {
+		  cursor: pointer;
+		}
+		.destroy {
+		  color: #9b0000;
+		  font-size: 25px;
+		  font-weight: bold;
+		  &:hover {
+			cursor: pointer;
+			color: #d00000;
+		  }
+		}
+	  }
+	}
+  }
+}

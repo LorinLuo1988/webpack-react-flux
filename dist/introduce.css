@@ -1,1 +1,39 @@
-body{color:#009926}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font: 16px/1.2 "\5FAE\8F6F\96C5\9ED1";
+}
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul {
+  list-style-type: none;
+}
+body {
+  color: #009926;
+}
+.example-enter {
+  font-size: 12px;
+  transition: font-size 1s ease-out;
+}
+.example-enter.example-enter-active {
+  font-size: 1em;
+}
+.example-leave {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+.example-leave.example-leave-active {
+  opacity: 0.01;
+}
+.example-appear {
+  opacity: 0.01;
+  transition: opacity 5s ease-in;
+}
+.example-appear.example-appear-active {
+  opacity: 1;
+}

@@ -6,6 +6,6 @@ import {createNav} from "./component/header.jsx";
 
 /*--------styles--------*/
 import "../style/common";
-import "homeCss";
+import "homeLess";
 
-createNav(["关于本站", "个人简介", "教育经历", "工作经历", "专业技能"]);
+createNav();
