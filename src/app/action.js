@@ -15,6 +15,22 @@ var todosActions = {
 			eventName: "remove-item",
 			item: value
 		})
+	},
+	toggleCheck: function (value) {
+		Dispatcher.dispatch({
+			eventName: "toggle-check",
+			item: value
+		})
+	},
+	toggleAll: function () {
+		Dispatcher.dispatch({
+			eventName: "toggle-all"
+		})
+	},
+	removeChecked: function () {
+		Dispatcher.dispatch({
+			eventName: "remove-checked"
+		})
 	}
 }
 

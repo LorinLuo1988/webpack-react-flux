@@ -48,6 +48,56 @@ TodosStore.prototype.removeItem = function (item) {
 	return this;
 }
 
+TodosStore.prototype.toggleCheck = function (item) {
+	this.items = this.items.map(function (value) {
+		if (value.id == item) {
+			value.checked = !value.checked;
+		}
+
+		return value;
+	})
+
+	return this;
+}
+
+TodosStore.prototype.toggleAll = function () {
+	var hasUnChecked = false;
+
+	this.items.map(function (value) {
+		if (!value.checked) {
+			hasUnChecked = true;
+		}
+	})
+
+	if (hasUnChecked) {
+		this.items = this.items.map(function (value) {
+			value.checked = true;
+
+			return value;
+		})
+	} else {
+		this.items = this.items.map(function (value) {
+			value.checked = false;
+
+			return value;
+		})
+	}
+
+	return this;
+}
+
+TodosStore.prototype.removeChecked = function () {
+	this.items = this.items.filter(function (value) {
+		if (value.checked) {
+			return false;
+		} else {
+			return true;
+		}
+	})
+
+	return this;
+}
+
 TodosStore.prototype.getAllItem = function () {
 	return this.items;
 }
@@ -61,6 +111,15 @@ Dispatcher.register(function (event) {
 			break;
 		case "remove-item":
 			todosStore.removeItem(event.item).emitChange();
+			break;
+		case "toggle-check":
+			todosStore.toggleCheck(event.item).emitChange();
+			break;
+		case "remove-checked":
+			todosStore.removeChecked().emitChange();
+			break;
+		case "toggle-all":
+			todosStore.toggleAll().emitChange();
 			break;
 	}
 })

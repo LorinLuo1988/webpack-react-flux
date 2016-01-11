@@ -62,6 +62,9 @@ webpackJsonp([0],{
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; } /**
 	                                                                                                                                                                                                                              * Created by doyen on 2015/12/24.
 	                                                                                                                                                                                                                              */
+	/*---------scripts---------*/
+	
+	/*--------styles--------*/
 	
 	var navList = ["关于本站", "个人简介", "教育经历", "工作经历", "专业技能"];
 	
@@ -171,24 +174,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 245:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	module.exports = __webpack_require__(142);
-
-
-/***/ },
-
 /***/ 246:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-
-/***/ 250:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

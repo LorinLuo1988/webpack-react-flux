@@ -42,11 +42,20 @@ var Todos = React.createClass({
 
 		this._sequenceID++;
 
-		TodosActions.add({id: this._sequenceID, value: value});
+		TodosActions.add({id: this._sequenceID, value: value, checked: false});
 		this.refs.todoInput.setState({inputValue: ""});
 	},
 	removeItem: function (id) {
 		TodosActions.remove(id);
+	},
+	toggleCheck: function (id) {
+		TodosActions.toggleCheck(id);
+	},
+	toggleAll: function () {
+		TodosActions.toggleAll();
+	},
+	removeChecked: function () {
+		TodosActions.removeChecked();
 	},
 	render: function () {
 		var listItem = TodosStore.getAllItem();
@@ -58,6 +67,8 @@ var Todos = React.createClass({
 				key={item.id}
 				itemkey={item.id}
 				TodosInstance={this}
+				checked={item.checked}
+				toggleCheck={this.toggleCheck}
 				removeItem={this.removeItem}>
 				{item.value}
 				</TodoItem>
@@ -68,11 +79,11 @@ var Todos = React.createClass({
 			<div className="todos">
 				<TodoHead title={this.props.title}></TodoHead>
 				<div className="panel">
-					<TodoInput addNewItem={this.addNewItem} ref="todoInput"></TodoInput>
+					<TodoInput toggleAll={this.toggleAll} listItem={listItem} addNewItem={this.addNewItem} ref="todoInput"></TodoInput>
 					<TodoList>
 						{list}
 					</TodoList>
-					<TodoControl></TodoControl>
+					<TodoControl listItem={listItem} removeChecked={this.removeChecked}></TodoControl>
 				</div>
 			</div>
 		)
@@ -99,9 +110,17 @@ var TodoInput = React.createClass({
 		this.setState({inputValue: this.refs["new-todo"].value});
 	},
 	render: function () {
+		var isAllChecked = true;
+
+		this.props.listItem.map(function (value) {
+			if (!value.checked) {
+				isAllChecked = false;
+			}
+		})
+
 		return (
 			<div className="input-control">
-				<span className="toggle-all">❯</span>
+				<span onClick={this.props.toggleAll} style={{display: this.props.listItem.length ? "inline-block" : "none"}} className={isAllChecked ? "toggle-all all-checked" : "toggle-all"}>❯</span>
 				<input onChange={this.inputValueChange}
 					onKeyUp={this.props.addNewItem}
 					value={this.state.inputValue}
@@ -130,10 +149,23 @@ var TodoList = React.createClass({
 });
 
 var TodoItem = React.createClass({
-	render: function () {
+	getDefaultProps: function () {
+		return {
+			unCheckedSrc: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>',
+			checkedSrc: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>'
+		}
+	},
+ 	render: function () {
+		var src = this.props.unCheckedSrc;
+
+		if (this.props.checked) {
+			src = this.props.checkedSrc;
+		}
+
 		return (
 			<li className="todo-item clear-fix">
-				{this.props.children}
+				<img className="select" src={src} onClick={this.props.toggleCheck.bind(this.props.TodosInstance, this.props.itemkey)} />
+				<span className={this.props.checked ? "checked-text" : "unChecked-text"}>{this.props.children}</span>
 				<span onClick={this.props.removeItem.bind(this.props.TodosInstance, this.props.itemkey)}
 					className="destroy pull-right">×</span>
 			</li>
@@ -143,9 +175,23 @@ var TodoItem = React.createClass({
 
 var TodoControl = React.createClass({
 	render: function () {
+		var unCheckedItem = 0;
+		var hasChecked = false;
+
+		this.props.listItem.map(function (value) {
+			if (!value.checked) {
+				unCheckedItem++;
+			}
+
+			if (value.checked) {
+				hasChecked = true;
+			}
+		})
+
 		return (
-			<div className="footer clear-fix">
-				<button className="pull-right">DELETE</button>
+			<div className="footer clear-fix" style={{display: this.props.listItem.length ? "block" : "none"}}>
+				<span>{unCheckedItem} Items Left</span>
+				<button style={{display: hasChecked ? "block" : "none"}} className="pull-right" onClick={this.props.removeChecked}>Delete</button>
 			</div>
 		)
 	}
