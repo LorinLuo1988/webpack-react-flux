@@ -165,7 +165,7 @@ var TodoItem = React.createClass({
 		return (
 			<li className="todo-item clear-fix">
 				<img className="select" src={src} onClick={this.props.toggleCheck.bind(this.props.TodosInstance, this.props.itemkey)} />
-				<span className={this.props.checked ? "checked-text" : "unChecked-text"}>{this.props.children}</span>
+				<span className={this.props.checked ? "checked-text" : "unChecked-text"} title={this.props.children}>{this.props.children}</span>
 				<span onClick={this.props.removeItem.bind(this.props.TodosInstance, this.props.itemkey)}
 					className="destroy pull-right">×</span>
 			</li>
