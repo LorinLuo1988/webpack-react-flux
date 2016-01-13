@@ -1,4 +1,4 @@
-webpackJsonp([0,3],[
+webpackJsonp([0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -13,9 +13,9 @@ webpackJsonp([0,3],[
 
 	var _header = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./component/header.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../sass/common\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
 	__webpack_require__(3);
+
+	__webpack_require__(4);
 
 	/*--------styles--------*/
 
@@ -26,7 +26,8 @@ webpackJsonp([0,3],[
 
 /***/ },
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

@@ -1,50 +1,23 @@
 ul:after {
   content: "";
   display: block;
-  clear: both;
-}
+  clear: both; }
+
 ul li {
   float: left;
   padding: 5px 10px;
   height: 25px;
   line-height: 25px;
-  cursor: pointer;
-}
-ul li:hover {
-  background-color: rgba(0, 128, 0, 0.43);
-  border-radius: 5px;
-}
-ul li:hover a {
-  color: #ffffff;
-}
-ul li a {
-  color: #000000;
-  text-decoration: none;
-}
-@charset "UTF-8";
-/**
- * Created by doyen on 2016/1/12.
- */
-* {
-  margin: 0px;
-  padding: 0px; }
-
-body {
-  font: 16px/1.5 微软雅黑; }
-
-.clear-fix:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-.pull-left {
-  float: left; }
-
-.pull-right {
-  float: right; }
-
-ul {
-  list-style-type: none; }
+  cursor: pointer; }
+  ul li:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px; }
+    ul li:hover a {
+      color: #ffffff; }
+  ul li a {
+    color: #000000;
+    text-decoration: none; }
 body {
   background-color: lightgrey; }
 

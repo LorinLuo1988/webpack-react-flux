@@ -1,24 +1,38 @@
+/**
+ * Created by doyen on 2016/1/12.
+ */
 body {
-  color: #009926;
-}
+  color: #009926; }
+
 .example-enter {
   font-size: 12px;
-  transition: font-size 1s ease-out;
-}
+  -webkit-transition: font-size 1s ease-out 0s;
+  -moz-transition: font-size 1s ease-out 0s;
+  -o-transition: font-size 1s ease-out 0s;
+  -ms-transition: font-size 1s ease-out 0s;
+  transition: font-size 1s ease-out 0s; }
+
 .example-enter.example-enter-active {
-  font-size: 1em;
-}
+  font-size: 1em; }
+
 .example-leave {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
-}
+  -webkit-transition: opacity 0.5s ease-in 0s;
+  -moz-transition: opacity 0.5s ease-in 0s;
+  -o-transition: opacity 0.5s ease-in 0s;
+  -ms-transition: opacity 0.5s ease-in 0s;
+  transition: opacity 0.5s ease-in 0s; }
+
 .example-leave.example-leave-active {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
+
 .example-appear {
   opacity: 0.01;
-  transition: opacity 5s ease-in;
-}
+  -webkit-transition: opacity 5s ease-in 0s;
+  -moz-transition: opacity 5s ease-in 0s;
+  -o-transition: opacity 5s ease-in 0s;
+  -ms-transition: opacity 5s ease-in 0s;
+  transition: opacity 5s ease-in 0s; }
+
 .example-appear.example-appear-active {
-  opacity: 1;
-}
+  opacity: 1; }

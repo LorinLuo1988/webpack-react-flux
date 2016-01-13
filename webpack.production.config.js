@@ -124,7 +124,7 @@ var config = {
 	},
 	resolve: {
 		root: path.resolve(__dirname, "src", "app"),
-		extensions: ["", ".js", ".jsx", ".css", ".less"],
+		extensions: ["", ".js", ".jsx", ".css", ".less", ".scss"],
 		alias: {
 			homeSass: path.resolve(__dirname, "src", "sass/home.scss")
 		}
