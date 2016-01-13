@@ -11,8 +11,8 @@ run
 
 skill
 
-javascript: react flux
+1. javascript: react flux
 
-css: less sass
+2. css: less sass
 
-Package Management: webpack
+3. Package Management: webpack
