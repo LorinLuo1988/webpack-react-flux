@@ -1,5 +1,5 @@
 # webpack-react-flux
-webpack and react learn
+run
 
 1. npm install
 
@@ -9,7 +9,7 @@ webpack and react learn
 
 4. npm run server
 
-#skill
+skill
 javascript: react flux
 css: less sass
 Package Management: webpack
