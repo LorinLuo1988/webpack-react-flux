@@ -5,7 +5,7 @@
 import {createNav} from "./component/header.jsx";
 
 /*--------styles--------*/
-import "../style/common";
-import "homeLess";
+import "../sass/common";
+import "homeSass";
 
 createNav();

@@ -1,0 +1,32 @@
+@import "_variable";
+@import "_mixin";
+
+body {
+	color: #009926;
+}
+.example-enter {
+  font-size: 12px;
+  @include transition(font-size, 1s, ease-out);
+}
+
+.example-enter.example-enter-active {
+  font-size: 1em;
+}
+
+.example-leave {
+  @include opacity(1);
+  @include transition(opacity, .5s, ease-in);
+}
+
+.example-leave.example-leave-active {
+  @include opacity(0.01);
+}
+
+.example-appear {
+  @include opacity(0.01);
+  @include transition(opacity, 5s, ease-in);
+}
+
+.example-appear.example-appear-active {
+  @include opacity(1);
+}

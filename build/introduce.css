@@ -1,26 +1,64 @@
+@charset "UTF-8";
+/**
+ * Created by doyen on 2016/1/12.
+ */
+* {
+  margin: 0px;
+  padding: 0px; }
+
 body {
-  color: #009926;
-}
+  font: 16px/1.5 微软雅黑; }
+
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+ul {
+  list-style-type: none; }
+/**
+ * Created by doyen on 2016/1/12.
+ */
+body {
+  color: #009926; }
+
 .example-enter {
   font-size: 12px;
-  transition: font-size 1s ease-out;
-}
+  -webkit-transition: font-size 1s ease-out;
+  -moz-transition: font-size 1s ease-out;
+  -o-transition: font-size 1s ease-out;
+  -ms-transition: font-size 1s ease-out;
+  transition: font-size 1s ease-out; }
+
 .example-enter.example-enter-active {
-  font-size: 1em;
-}
+  font-size: 1em; }
+
 .example-leave {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
-}
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in; }
+
 .example-leave.example-leave-active {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
+
 .example-appear {
   opacity: 0.01;
-  transition: opacity 5s ease-in;
-}
+  -webkit-transition: opacity 5s ease-in;
+  -moz-transition: opacity 5s ease-in;
+  -o-transition: opacity 5s ease-in;
+  -ms-transition: opacity 5s ease-in;
+  transition: opacity 5s ease-in; }
+
 .example-appear.example-appear-active {
-  opacity: 1;
-}
+  opacity: 1; }
 
 /*# sourceMappingURL=introduce.css.map*/

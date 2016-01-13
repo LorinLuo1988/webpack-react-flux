@@ -8,8 +8,12 @@ import {TodosStore} from "./store";
 import {TodosActions} from "./action";
 
 /*--------styles--------*/
-import "../style/common";
-import "../style/todos";
+import "../sass/common";
+import "../sass/todos";
+
+/*--------images--------*/
+var checkedSrc = require("../img/checked.png");
+var unCheckedSrc = require("../img/unChecked.png");
 
 var Todos = React.createClass({
 	getInitialState: function () {
@@ -151,8 +155,8 @@ var TodoList = React.createClass({
 var TodoItem = React.createClass({
 	getDefaultProps: function () {
 		return {
-			unCheckedSrc: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>',
-			checkedSrc: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>'
+			unCheckedSrc: unCheckedSrc,
+			checkedSrc: checkedSrc
 		}
 	},
  	render: function () {

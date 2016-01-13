@@ -109,6 +109,10 @@ var config = {
 				loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize?sourceMap!less-loader")
 			},
 			{
+				test: /\.scss/,
+				loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize?sourceMap!sass-loader")
+			},
+			{
 				test: /\.(png|jpg)$/,
 				loader: "url-loader",
 				query: {
@@ -122,7 +126,7 @@ var config = {
 		root: path.resolve(__dirname, "src", "app"),
 		extensions: ["", ".js", ".jsx", ".css", ".less"],
 		alias: {
-			homeLess: path.resolve(__dirname, "src", "style/home.less")
+			homeSass: path.resolve(__dirname, "src", "sass/home.scss")
 		}
 	}
 };

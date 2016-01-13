@@ -1,0 +1,88 @@
+@mixin transition ($attribute: opacity, $time: 0.5s, $animation: ease-in, $delay: 0s) {
+  -webkit-transition: $attribute $time $animation $delay;
+  -moz-transition: $attribute $time $animation $delay;
+  -o-transition: $attribute $time $animation $delay;
+  -ms-transition: $attribute $time $animation $delay;
+  transition: $attribute $time $animation $delay;
+}
+
+@mixin transform ($type, $value) {
+  @if ($type == rotate) {
+	-webkit-transform: rotate(#{$value});
+	-moz-transform: rotate(#{$value});
+	-o-transform: rotate(#{$value});
+	-ms-transform: rotate(#{$value});
+	transform: rotate(#{$value});
+  }
+}
+
+@mixin opacity ($value) {
+  opacity: $value;
+}
+
+@mixin border ($width: 1px, $style: solid, $color: gray) {
+  border: $width $style $color;
+}
+
+@mixin borderRadius ($radius: 5px) {
+  @if type_of($radius) != number {
+  	@error "$radius must be a number, your input is #{$radius}!";
+  }
+
+  @if not unitless($radius) {
+	@if (unit($radius) != px) {
+	  @error "$radius must be the end of 'px', your input is #{$radius}";
+	}
+  } @else {
+	@warn "$radius should be the end of 'px', your input is #{$radius}!";
+	$radius: #{$radius}px;
+  }
+
+  border-radius: $radius;
+}
+
+@mixin boxShadow ($type, $h-shadow: 1px, $v-shadow: 1px, $blur: 1px, $spread: 1px, $color: gray) {
+  @if (type_of($type) != string) {
+	@error "$type must be a string, your input is #{$type}!";
+  }
+
+  @if ($type == inset) {
+	-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color inset;
+	-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color inset;
+	-ms-box-shadow: $h-shadow $v-shadow $blur $spread $color inset;
+	-o-box-shadow: $h-shadow $v-shadow $blur $spread $color inset;
+	box-shadow: $h-shadow $v-shadow $blur $spread $color inset;
+  } @else if ($type == outset) {
+	-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+	-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+	-ms-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+	-o-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+	box-shadow: $h-shadow $v-shadow $blur $spread $color;
+  } @else if ($type == both) {
+	-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color,
+	$h-shadow $v-shadow $blur $spread $color inset;
+	-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color,
+	$h-shadow $v-shadow $blur $spread $color inset;
+	-ms-box-shadow: $h-shadow $v-shadow $blur $spread $color,
+	$h-shadow $v-shadow $blur $spread $color inset;
+	-o-box-shadow: $h-shadow $v-shadow $blur $spread $color,
+	$h-shadow $v-shadow $blur $spread $color inset;
+	box-shadow: $h-shadow $v-shadow $blur $spread $color,
+	$h-shadow $v-shadow $blur $spread $color inset;
+  }
+}
+
+@mixin button ($padding: 0px 10px, $bg: gray, $color: white, $height: 25px) {
+  outline: none;
+  border: none;
+  padding: $padding;
+  background-color: $bg;
+  color: $color;
+  height: $height;
+  line-height: $height;
+  &:hover {
+	cursor: pointer;
+  }
+}
+
+

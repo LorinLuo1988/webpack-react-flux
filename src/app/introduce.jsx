@@ -6,8 +6,8 @@ import React from "react/addons";
 import ReactDOM from "react-dom";
 
 /*----------styles---------*/
-import "../style/common";
-import "../style/introduce";
+import "../sass/common";
+import "../sass/introduce";
 
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 

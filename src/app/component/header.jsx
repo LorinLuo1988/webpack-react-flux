@@ -6,7 +6,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 /*--------styles--------*/
-import "../../style/header.less"
+import "../../sass/header"
 
 var navList = ["关于本站", "个人简介", "教育经历", "工作经历", "专业技能"];
 
