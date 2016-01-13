@@ -8,3 +8,8 @@ webpack and react learn
 3. npm run deploy
 
 4. npm run server
+
+#skill
+javascript: react flux
+css: less sass
+Package Management: webpack
