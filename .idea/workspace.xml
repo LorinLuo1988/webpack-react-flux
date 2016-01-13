@@ -99,8 +99,8 @@
             <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="480">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <marker date="1452665776860" expanded="true" signature="21:312" placeholder="..." />
-                <marker date="1452665776860" expanded="true" signature="38:171" placeholder="..." />
+                <marker date="1452667771154" expanded="true" signature="21:312" placeholder="..." />
+                <marker date="1452667771154" expanded="true" signature="38:171" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -112,8 +112,8 @@
             <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="480">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <marker date="1452665776860" expanded="true" signature="21:317" placeholder="..." />
-                <marker date="1452665776860" expanded="true" signature="38:181" placeholder="..." />
+                <marker date="1452667771155" expanded="true" signature="21:317" placeholder="..." />
+                <marker date="1452667771155" expanded="true" signature="38:181" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +122,8 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="3450">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="3450">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#989#1565#0" expanded="false" />
                 <element signature="e#3005#3058#0" expanded="false" />
@@ -135,8 +135,8 @@
       <file leaf-file-name="webpack.production.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.production.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30837005" vertical-offset="3510" max-vertical-offset="4290">
-              <caret line="126" column="59" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.5726872" vertical-offset="360" max-vertical-offset="4290">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -187,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/sass/common.scss" />
         <option value="$PROJECT_DIR$/src/sass/introduce.scss" />
         <option value="$PROJECT_DIR$/src/app/introduce.jsx" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/app/home.jsx" />
         <option value="$PROJECT_DIR$/src/app/component/header.jsx" />
         <option value="$PROJECT_DIR$/src/sass/header.scss" />
@@ -198,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/sass/_mixin.scss" />
         <option value="$PROJECT_DIR$/dist/introduce.html" />
         <option value="$PROJECT_DIR$/webpack.production.config.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -776,8 +776,8 @@
         <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="480">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1452665776860" expanded="true" signature="21:312" placeholder="..." />
-            <marker date="1452665776860" expanded="true" signature="38:171" placeholder="..." />
+            <marker date="1452667771154" expanded="true" signature="21:312" placeholder="..." />
+            <marker date="1452667771154" expanded="true" signature="38:171" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -787,16 +787,16 @@
         <state vertical-scroll-proportion="-0.0" vertical-offset="30" max-vertical-offset="480">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1452665776860" expanded="true" signature="21:317" placeholder="..." />
-            <marker date="1452665776860" expanded="true" signature="38:181" placeholder="..." />
+            <marker date="1452667771155" expanded="true" signature="21:317" placeholder="..." />
+            <marker date="1452667771155" expanded="true" signature="38:181" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="3450">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="3450">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="e#989#1565#0" expanded="false" />
             <element signature="e#3005#3058#0" expanded="false" />
@@ -806,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.production.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30837005" vertical-offset="3510" max-vertical-offset="4290">
-          <caret line="126" column="59" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.5726872" vertical-offset="360" max-vertical-offset="4290">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="25" />
           <folding />
         </state>
       </provider>

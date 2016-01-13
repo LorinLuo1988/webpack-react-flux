@@ -25,7 +25,7 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /*---ordinal variable---*/
-var babelQuery = {presets: ["es2015", "react"], };
+var babelQuery = {presets: ["es2015", "react"], plugins: ["transform-object-rest-spread"]};
 
 /*---------------config--------------*/
 var config = {
